@@ -3,11 +3,18 @@ from django.shortcuts import render
 from band.models import Band
 from band.serializer import BandSerializer
 from rest_framework import generics
+from band.form import DetailForm
 # Create your views here.
 
 
 def all_bands(request):
-    return render(request, 'band/all_band.html')
+    if request.method == "GET":
+        return render(request, 'band/all_band.html', {'form': DetailForm})
+    elif request.method == "POST":
+        form = DetailForm(request.POST)
+        if form.is_valid():
+            print(form)
+            return render(request, 'band/all_band.html', {'form': DetailForm})
 
 
 def band(request, band_id):

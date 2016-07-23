@@ -20,5 +20,7 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^band/', include('band.urls')),
+    url(r'^summernote/', include('django_summernote.urls')),
+    # url(r'^summernote/editor/id_detail/django-summernote/', include('django_summernote.urls')),
 
 ]

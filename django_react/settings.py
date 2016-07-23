@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'band',
     'rest_framework',
+    'django_summernote',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -145,3 +146,6 @@ STATICFILES_DIRS = [
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR,  'templates'),
 )
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/media')
+MEDIA_URL = '/static/media/'
